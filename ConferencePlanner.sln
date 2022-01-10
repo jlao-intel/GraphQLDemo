@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL", "GraphQL\GraphQL.csproj", "{A7F1C655-0718-450D-8718-814D3EEC1D89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL", "GraphQL\GraphQL.csproj", "{A7F1C655-0718-450D-8718-814D3EEC1D89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQLUnitTest", "GraphQLUnitTest\GraphQLUnitTest.csproj", "{45378B4E-BADC-4C87-9719-E37727F2868F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,9 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A7F1C655-0718-450D-8718-814D3EEC1D89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +29,23 @@ Global
 		{A7F1C655-0718-450D-8718-814D3EEC1D89}.Release|x64.Build.0 = Release|Any CPU
 		{A7F1C655-0718-450D-8718-814D3EEC1D89}.Release|x86.ActiveCfg = Release|Any CPU
 		{A7F1C655-0718-450D-8718-814D3EEC1D89}.Release|x86.Build.0 = Release|Any CPU
+		{45378B4E-BADC-4C87-9719-E37727F2868F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45378B4E-BADC-4C87-9719-E37727F2868F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45378B4E-BADC-4C87-9719-E37727F2868F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{45378B4E-BADC-4C87-9719-E37727F2868F}.Debug|x64.Build.0 = Debug|Any CPU
+		{45378B4E-BADC-4C87-9719-E37727F2868F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{45378B4E-BADC-4C87-9719-E37727F2868F}.Debug|x86.Build.0 = Debug|Any CPU
+		{45378B4E-BADC-4C87-9719-E37727F2868F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45378B4E-BADC-4C87-9719-E37727F2868F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45378B4E-BADC-4C87-9719-E37727F2868F}.Release|x64.ActiveCfg = Release|Any CPU
+		{45378B4E-BADC-4C87-9719-E37727F2868F}.Release|x64.Build.0 = Release|Any CPU
+		{45378B4E-BADC-4C87-9719-E37727F2868F}.Release|x86.ActiveCfg = Release|Any CPU
+		{45378B4E-BADC-4C87-9719-E37727F2868F}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50754E9B-3791-41C6-9651-18AE5E7492EB}
 	EndGlobalSection
 EndGlobal

@@ -16,6 +16,8 @@ using ConferencePlanner.GraphQL.Speakers;
 using ConferencePlanner.GraphQL.Sessions;
 using ConferencePlanner.GraphQL.Tracks;
 using ConferencePlanner.GraphQL.Attendees;
+using ConferencePlanner.GraphQL.Schools;
+using ConferecePlanner.GraphQL;
 
 namespace GraphQL
 {
@@ -34,16 +36,23 @@ namespace GraphQL
 
             services.AddPooledDbContextFactory<ApplicationDbContext>(options => options.UseSqlite("Data Source=conferences.db"));
 
+            services.AddHttpClient<SchoolService>(c =>
+            {
+                c.BaseAddress = new Uri("http://jlao-mobl.amr.corp.intel.com:8001/api/");
+            });
+
             services
                 .AddGraphQLServer()
                 .AddQueryType(d => d.Name("Query"))
                     .AddTypeExtension<AttendeeQueries>()
                     .AddTypeExtension<SpeakerQueries>()
                     .AddTypeExtension<SessionQueries>()
+                    .AddTypeExtension<SchoolQueries>()
                     .AddTypeExtension<TrackQueries>()
                 .AddMutationType(d => d.Name("Mutation"))
                     .AddTypeExtension<AttendeeMutations>()
                     .AddTypeExtension<SessionMutations>()
+                    .AddTypeExtension<SchoolMutations>()
                     .AddTypeExtension<SpeakerMutations>()
                     .AddTypeExtension<TrackMutations>()
                 .AddSubscriptionType(d => d.Name("Subscription"))
@@ -56,10 +65,10 @@ namespace GraphQL
                 .EnableRelaySupport()
                 .AddFiltering()
                 .AddSorting()
+                .AddErrorFilter<GraphQLErrorFilter>()
                 .AddInMemorySubscriptions()
                 .AddDataLoader<SpeakerByIdDataLoader>()
                 .AddDataLoader<SessionByIdDataLoader>();
-
 
 
         }
@@ -69,7 +78,6 @@ namespace GraphQL
         {
 
             app.UseCors("MyPolicy");
-
 
             if (env.IsDevelopment())
             {
